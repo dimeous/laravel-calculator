@@ -13,7 +13,7 @@ interface ICalc
      * @return float|integer
      */
 
-    public function calculate($input1,$input2);
+    public function calculate($input1,$input2=null);
 
     /**
      * Fuction return sign of operation

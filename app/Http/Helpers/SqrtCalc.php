@@ -2,25 +2,24 @@
 
 namespace App\Http\Helpers;
 /**
- * Divide class
+ * Square class
  */
-class MultiplyCalc implements ICalc
+class SquareCalc implements ICalc
 {
     /**
      * Var of  sign
      * @var string
      */
-    private $sign = '*';
+    private $sign = 'sqrt';
 
     /**
      *  Function to calculate
      * @param float $input1
-     * @param float $input2
-     * @return float|integer
+     * @return float
      */
-    public function calculate($input1, $input2=null)
+    public function calculate( $input1, $input2=null):float
     {
-        return $input1 * $input2;
+        return  sqrt($input1);
     }
 
     /**

@@ -20,7 +20,7 @@ class DivideCalc implements ICalc
      * @param float $input2
      * @return float
      */
-    public function calculate($input1, $input2):float
+    public function calculate($input1, $input2=null):float
     {
         return $input1 / $input2;
     }
