@@ -27,7 +27,7 @@ class MultiplyCalc implements ICalc
      * Function that get the sign
      * @return string
      */
-    public function getSign()
+    public function getSign():string
     {
         return $this->sign;
     }

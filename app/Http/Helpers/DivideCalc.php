@@ -20,7 +20,7 @@ class DivideCalc implements ICalc
      * @param float $input2
      * @return float
      */
-    public function calculate($input1, $input2)
+    public function calculate($input1, $input2):float
     {
         return $input1 / $input2;
     }
@@ -29,7 +29,7 @@ class DivideCalc implements ICalc
      * Function that get the sign
      * @return string
      */
-    public function getSign()
+    public function getSign():string
     {
         return $this->sign;
     }

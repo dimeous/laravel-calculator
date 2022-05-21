@@ -19,5 +19,5 @@ interface ICalc
      * Fuction return sign of operation
      * @return string
      */
-    public function getSign();
+    public function getSign(): string;
 }
