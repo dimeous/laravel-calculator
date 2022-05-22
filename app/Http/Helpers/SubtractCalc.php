@@ -18,7 +18,7 @@ class SubtractCalc implements ICalc
      * @param float $input2
      * @return float
      */
-    public function calculate($input1, $input2=null): float
+    public function calculate($input1, $input2): float
     {
         return $input1 - $input2;
     }

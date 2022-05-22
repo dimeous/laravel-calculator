@@ -2,25 +2,25 @@
 
 namespace App\Http\Helpers;
 /**
- * Divide class
+ * Add class
  */
-class MultiplyCalc implements ICalc
+class CalcAdd implements ICalc
 {
     /**
      * Var of  sign
      * @var string
      */
-    private $sign = '*';
+    private $sign = '+';
 
     /**
      *  Function to calculate
      * @param float $input1
      * @param float $input2
-     * @return float|integer
+     * @return float
      */
-    public function calculate($input1, $input2=null)
+    public function calculate($input1, $input2): float
     {
-        return $input1 * $input2;
+        return $input1 + $input2;
     }
 
     /**

@@ -2,9 +2,9 @@
 
 namespace App\Http\Helpers;
 /**
- * Square class
+ * Square root class
  */
-class SquareCalc implements ICalc
+class CalcSqrt implements ICalc
 {
     /**
      * Var of  sign
@@ -17,9 +17,9 @@ class SquareCalc implements ICalc
      * @param float $input1
      * @return float
      */
-    public function calculate( $input1, $input2=null):float
+    public function calculate( $input1, $input2):float
     {
-        return  sqrt($input1);
+        return  sqrt($input2);
     }
 
     /**

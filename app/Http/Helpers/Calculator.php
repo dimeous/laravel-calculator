@@ -16,12 +16,14 @@ class Calculator
     public static function calculate(string $input)
     {
         $input = strtolower($input);
+        $input = str_replace(',', '.', $input);
         $sequence = self::findOperator($input);
         if ($sequence) {
             try {
                 $className = 'App\\Http\\Helpers\\Calc' . ucfirst($sequence[0]);
                 if (class_exists($className)) {
-                    return new $className($sequence[1], $sequence[2]);
+                    $calc = new $className();
+                    return $calc->calculate($sequence[1], $sequence[2]);
                 }
             } catch (\Exception $ex) {
                 return 'error:' . $ex->getMessage();
@@ -38,11 +40,11 @@ class Calculator
     {
         $operators = ['+' => 'Add', '-' => 'Substract', '*' => 'Multiply', '/' => 'Divide', 'sqrt' => 'Sqrt'];
         foreach ($operators as $operator => $class)
-            if (preg_match($operator, $string)) {
+            if (strpos($string, $operator)!==false) {
                 if ($operator == 'sqrt') {
-                    return [$class, floatval(substr_replace($operator, '', $string)), null];
+                    return [$class, null, floatval(str_replace($operator, '', $string))];
                 }
-                $array = explode($string, $operator);
+                $array = explode($operator, $string);
                 return [$class, $array[0], $array[1]];
             }
         return null;

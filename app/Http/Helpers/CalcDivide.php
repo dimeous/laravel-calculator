@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Helpers;
+use phpDocumentor\Reflection\Types\Integer;
+
 /**
- * Add class
+ * Divide class
  */
-class AddCalc implements ICalc
+class CalcDivide implements ICalc
 {
     /**
      * Var of  sign
      * @var string
      */
-    private $sign = '+';
+    private $sign = '/';
 
     /**
      *  Function to calculate
@@ -18,9 +20,9 @@ class AddCalc implements ICalc
      * @param float $input2
      * @return float
      */
-    public function calculate($input1, $input2=null): float
+    public function calculate($input1, $input2):float
     {
-        return $input1 + $input2;
+        return $input1 / $input2;
     }
 
     /**
