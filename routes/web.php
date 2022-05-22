@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Helpers\Calculator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::match(['get', 'post'],'/', function (Request $request) {
+
+    $result='';
+    $expression = $request->get('expression');
+    if ($expression){
+        $result = Calculator::calculate($expression);
+    }
+    return view('calculator', ['expression' =>$expression , 'result'=>$result ]);
 });
